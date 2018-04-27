@@ -16,9 +16,9 @@ get '/don' do
   erb :list
 end
 
-get '/carry' do
+get '/curry' do
   @title = 'カレー一覧'
-  uri = URI.parse('https://matsuya.makotia.me/v4/search?type=carry')
+  uri = URI.parse('https://matsuya.makotia.me/v4/search?type=curry')
   json = Net::HTTP.get(uri)
   @result = JSON.parse(json)
   erb :list
