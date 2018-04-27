@@ -13,7 +13,7 @@ get '/don' do
   uri = URI.parse('https://matsuya.makotia.me/v4/search?type=don')
   json = Net::HTTP.get(uri)
   @result = JSON.parse(json)
-  erb :don
+  erb :list
 end
 
 get '/carry' do
@@ -21,7 +21,7 @@ get '/carry' do
   uri = URI.parse('https://matsuya.makotia.me/v4/search?type=carry')
   json = Net::HTTP.get(uri)
   @result = JSON.parse(json)
-  erb :carry
+  erb :list
 end
 
 get '/drink' do
@@ -29,5 +29,5 @@ get '/drink' do
   uri = URI.parse('https://matsuya.makotia.me/v4/search?type=drink')
   json = Net::HTTP.get(uri)
   @result = JSON.parse(json)
-  erb :drink
+  erb :list
 end
