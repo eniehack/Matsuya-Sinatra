@@ -1,0 +1,28 @@
+<p>商品名: <%= @result['name'] %></p><br />
+<p>価格: <%= @result['price'] %>円</p><br />
+<p>説明: <%= @result['description'] %></p><br />
+<h2>栄養情報</h2>
+<table>
+<thead>
+<tr>
+  <th></th>
+  <th>カロリー</th>
+  <th>たんぱく質</th>
+  <th>脂質</th>
+  <th>炭水化物</th>
+  <th>ナトリウム</th>
+  <th>食塩相当量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td></td>
+  <td><%= @result['calorie'] %></td>
+  <td><%= @result['protein'] %></td>
+  <td><%= @result['lipid'] %></td>
+  <td><%= @result['carbohydrate'] %></td>
+  <td><%= @result['sodium'] %></td>
+  <td><%= @result['saltEquivalent'] %></td>
+</tr>
+</tbody>
+</table>
