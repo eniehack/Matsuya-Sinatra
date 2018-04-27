@@ -87,3 +87,11 @@ get '/premium' do
   @result = JSON.parse(json)
   erb :list
 end
+
+get '/random' do
+  uri = URI.parse('https://matsuya.makotia.me/v4/random')
+  json = Net::HTTP.get(uri)
+  @result = JSON.parse(json)
+  @title = 'ランダム'
+  erb :details
+end
