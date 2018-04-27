@@ -23,3 +23,11 @@ get '/carry' do
   @result = JSON.parse(json)
   erb :carry
 end
+
+get '/drink' do
+  @title = 'ドリンク一覧'
+  uri = URI.parse('https://matsuya.makotia.me/v4/search?type=drink')
+  json = Net::HTTP.get(uri)
+  @result = JSON.parse(json)
+  erb :drink
+end
