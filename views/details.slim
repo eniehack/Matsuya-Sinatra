@@ -1,0 +1,25 @@
+image src="#{@result['imageURL']}"
+p = @result['name']
+p = @result['price'] 円
+p = @result['description'] %
+h2 栄養情報
+table
+thead
+tr
+  th
+  th カロリー
+  th たんぱく質
+  th 脂質
+  th 炭水化物
+  th ナトリウム
+  th 食塩相当量
+
+tbody
+tr
+  td
+  td = @result['calorie']  kcal
+  td = @result['protein']  g
+  td = @result['lipid']  g
+  td = @result['carbohydrate']  g
+  td = @result['sodium']  mg
+  td = @result['saltEquivalent']  g

@@ -2,10 +2,11 @@ require 'net/http'
 require 'uri'
 require 'json'
 require 'sinatra'
+require 'slim'
 
 get '/' do
   @title = 'home'
-  erb :index
+  slim :index
 end
 
 get '/don' do
@@ -13,7 +14,7 @@ get '/don' do
   uri = URI.parse('https://matsuya.makotia.me/v4/search?type=don')
   json = Net::HTTP.get(uri)
   @result = JSON.parse(json)
-  erb :list
+  slim :list
 end
 
 get '/curry' do
@@ -21,7 +22,7 @@ get '/curry' do
   uri = URI.parse('https://matsuya.makotia.me/v4/search?type=curry')
   json = Net::HTTP.get(uri)
   @result = JSON.parse(json)
-  erb :list
+  slim :list
 end
 
 get '/drink' do
@@ -29,7 +30,7 @@ get '/drink' do
   uri = URI.parse('https://matsuya.makotia.me/v4/search?type=drink')
   json = Net::HTTP.get(uri)
   @result = JSON.parse(json)
-  erb :list
+  slim :list
 end
 
 get '/gyuumeshi' do
@@ -37,7 +38,7 @@ get '/gyuumeshi' do
   uri = URI.parse('https://matsuya.makotia.me/v4/search?type=gyuumeshi')
   json = Net::HTTP.get(uri)
   @result = JSON.parse(json)
-  erb :list
+  slim :list
 end
 
 get '/morning' do
@@ -45,7 +46,7 @@ get '/morning' do
   uri = URI.parse('https://matsuya.makotia.me/v4/search?type=moaning')
   json = Net::HTTP.get(uri)
   @result = JSON.parse(json)
-  erb :list
+  slim :list
 end
 
 get '/side' do
@@ -53,7 +54,7 @@ get '/side' do
   uri = URI.parse('https://matsuya.makotia.me/v4/search?type=sidemenu')
   json = Net::HTTP.get(uri)
   @result = JSON.parse(json)
-  erb :list
+  slim :list
 end
 
 get '/teishoku' do
@@ -61,7 +62,7 @@ get '/teishoku' do
   uri = URI.parse('https://matsuya.makotia.me/v4/search?type=teishuoku')
   json = Net::HTTP.get(uri)
   @result = JSON.parse(json)
-  erb :list
+  slim :list
 end
 
 get '/udon' do
@@ -69,7 +70,7 @@ get '/udon' do
   uri = URI.parse('https://matsuya.makotia.me/v4/search?type=udon')
   json = Net::HTTP.get(uri)
   @result = JSON.parse(json)
-  erb :list
+  slim :list
 end
 
 get '/topping' do
@@ -77,7 +78,7 @@ get '/topping' do
   uri = URI.parse('https://matsuya.makotia.me/v4/search?type=topping')
   json = Net::HTTP.get(uri)
   @result = JSON.parse(json)
-  erb :list
+  slim :list
 end
 
 get '/premium' do
@@ -85,7 +86,7 @@ get '/premium' do
   uri = URI.parse('https://matsuya.makotia.me/v4/search?type=premium')
   json = Net::HTTP.get(uri)
   @result = JSON.parse(json)
-  erb :list
+  slim :list
 end
 
 get '/random' do
@@ -93,5 +94,5 @@ get '/random' do
   json = Net::HTTP.get(uri)
   @result = JSON.parse(json)
   @title = 'ランダム'
-  erb :details
+  slim :details
 end
