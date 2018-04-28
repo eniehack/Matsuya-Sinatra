@@ -1,4 +1,4 @@
 - for row in @result do
-img src="#{row['imageURL']}"
-p = row['name']
-- end
+  img src="#{row['imageURL']}"
+  p
+    a href="details/#{row['name']}" = row['name']
