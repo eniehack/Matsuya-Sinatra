@@ -1,5 +1,8 @@
+require 'rubygems'
+require 'bundler/setup'
 require 'net/http'
 require 'uri'
+require 'cgi'
 require 'json'
 require 'sinatra'
 require 'slim'
@@ -93,6 +96,15 @@ get '/random' do
   uri = URI.parse('https://matsuya.makotia.me/v4/random')
   json = Net::HTTP.get(uri)
   @result = JSON.parse(json)
-  @title = 'ランダム'
+  slim :details
+end
+
+get '/details/:name' do |name|
+  encode = CGI.escape("https://matsuya.makotia.me/v4/search?name=#{name}")
+  uri = URI.parse(encode)
+  json = Net::HTTP.get(uri)
+  @result = JSON.parse(json)
+  p @result
+  @title = '商品詳細'
   slim :details
 end
