@@ -1,25 +1,28 @@
-image src="#{@result['imageURL']}"
+div class="container"
+  img src="#{@result['imageURL']}" class="img-responsive"
 p 商品名:#{@result['name']}
 p 価格:#{@result['price']}
 p 説明:#{@result['description']}
 h2 栄養情報
-table
-  thead
-    tr
-      th
-      th カロリー
-      th たんぱく質
-      th 脂質
-      th 炭水化物
-      th ナトリウム
-      th 食塩相当量
+div class="container"
+  div class="table-responsive"
+    table class="table table-striped"
+      thead
+        tr
+          th
+          th カロリー
+          th たんぱく質
+          th 脂質
+          th 炭水化物
+          th ナトリウム
+          th 食塩相当量
 
-  tbody
-    tr
-      td
-      td = @result['calorie']
-      td = @result['protein']
-      td = @result['lipid']
-      td = @result['carbohydrate']
-      td = @result['sodium']
-      td = @result['saltEquivalent']
+      tbody
+        tr
+          td
+          td = @result['calorie']
+          td = @result['protein']
+          td = @result['lipid']
+          td = @result['carbohydrate']
+          td = @result['sodium']
+          td = @result['saltEquivalent']
