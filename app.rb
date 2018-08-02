@@ -5,6 +5,7 @@ require 'uri'
 require 'cgi'
 require 'json'
 require 'sinatra'
+require 'sinatra/reloader'
 require 'slim'
 
 get '/' do
