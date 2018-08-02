@@ -1,8 +1,12 @@
 div class="container"
   img src="#{@result['imageURL']}" class="img-responsive"
-p 商品名:#{@result['name']}
-p 価格:#{@result['price']}
-p 説明:#{@result['description']}
+dl class="row"
+  dt class="col-sm-3" 商品名:
+  dd class="col-sm-9" #{@result['name']}
+  dt class="col-sm-3" 価格:
+  dd class="col-sm-9" #{@result['price']}
+  dt class="col-sm-3" 説明:
+  dd class="col-sm-9" #{@result['description']}
 h2 栄養情報
 div class="container"
   div class="table-responsive"
