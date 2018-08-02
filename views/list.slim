@@ -1,4 +1,8 @@
 - for row in @result do
-  img src="#{row['imageURL']}"
-  p
-    a href="details/#{row['name']}" = row['name']
+  div class="row"
+    div class="col-sm-6"
+      div class="card"
+        img class="card-img-top" src="#{row['imageURL']}"
+        div class="card-body"
+          p class="card-text"
+            a href="details/#{row['name']}" = row['name']
